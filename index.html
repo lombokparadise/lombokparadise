@@ -1,601 +1,235 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lombok Paradise Travel Agency - Find Your Paradise in Lombok</title>
-    <!-- Tailwind CSS CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lombok Paradise Travel Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter & Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        oceanDark: '#0B2545',
-                        oceanBlue: '#134074',
-                        turquoise: '#00B4D8',
-                        oceanLight: '#EEF4F8',
-                        accentGold: '#F4D35E'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15);
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Glassmorphism Effect yang Sangat Bening dan Elegan */
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         .glass-nav {
-            background: rgba(11, 37, 69, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-        .hero-banner {
-            background: linear-gradient(to bottom, rgba(11, 37, 69, 0.45), rgba(11, 37, 69, 0.85)), url('image/banner.jpg');
-            background-size: cover;
-            background-position: center;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-oceanLight text-oceanDark font-sans antialiased selection:bg-turquoise selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased">
 
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10 transition-all duration-300">
+    <header class="sticky top-0 z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-white/10 p-0.5 border border-white/30 flex items-center justify-center overflow-hidden shadow-lg">
-                    <img src="image/logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/100x100/134074/ffffff?text=LP';" alt="Lombok Paradise Logo" class="w-full h-full object-cover rounded-full">
-                </div>
+            <div class="flex items-center space-x-3">
+                <img src="image/logo.jpg" alt="Lombok Paradise Logo" class="w-10 h-10 object-cover rounded-full border border-cyan-400/50 shadow-md">
                 <div>
-                    <span class="font-serif font-bold text-lg sm:text-xl text-white tracking-wide block leading-tight">LOMBOK PARADISE</span>
-                    <span class="text-[10px] uppercase tracking-widest text-turquoise font-medium block">TRAVEL AGENCY</span>
+                    <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight leading-none">LOMBOK PARADISE</h1>
+                    <span class="text-[10px] font-semibold text-cyan-400 tracking-widest uppercase">Travel Agency</span>
                 </div>
-            </a>
+            </div>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/90">
-                <a href="#home" class="hover:text-turquoise transition-colors">Home</a>
-                <a href="#destinations" class="hover:text-turquoise transition-colors">Destinations</a>
-                <a href="#packages" class="hover:text-turquoise transition-colors">Packages</a>
-                <a href="#gallery" class="hover:text-turquoise transition-colors">Gallery</a>
-                <a href="#about" class="hover:text-turquoise transition-colors">About</a>
-                <a href="#contact" class="hover:text-turquoise transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center space-x-1 glass px-4 py-2 rounded-full border border-white/10">
+                <a href="#" class="px-4 py-1.5 rounded-full text-xs font-bold text-white bg-white/20 shadow-sm transition">Home</a>
+                <a href="#destinasi" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">Destinations</a>
+                <a href="#paket" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">Packages</a>
+                <a href="#galeri" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">Gallery</a>
+                <a href="#about" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">About</a>
+                <a href="#kontak" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">Contact</a>
             </nav>
 
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-                <button onclick="toggleSearch()" class="w-10 h-10 rounded-full glass-card text-white flex items-center justify-center hover:bg-white/25 transition" aria-label="Cari Destinasi">
-                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            <div class="flex items-center space-x-3">
+                <button aria-label="Search" class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/20 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
-                <a href="https://wa.me/6281917437171?text=Halo%20Lombok%20Paradise,%20saya%20tertarik%20ingin%20memesan%20tour%20liburan." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-turquoise hover:bg-turquoise/90 text-oceanDark font-semibold px-5 py-2.5 rounded-full text-sm shadow-lg shadow-turquoise/30 transition transform hover:-translate-y-0.5">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>081917437171</span>
+
+                <a href="https://wa.me/6281917437171?text=Halo%20Lombok%20Paradise,%20saya%20tertarik%20dengan%20paket%20wisatanya." target="_blank" class="glass px-4 py-2 rounded-full flex items-center space-x-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/20 transition border border-emerald-500/30">
+                    <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.766 0 1.018.267 1.972.733 2.798l-7.784 2.85 2.87-7.659c.77-1.468 2.261-2.529 3.996-2.529h.02c1.735 0 3.226 1.061 3.996 2.529l.063.125c.677-1.042 1.848-1.745 3.181-1.745 2.128 0 3.851 1.724 3.851 3.851 0 2.128-1.723 3.852-3.851 3.852-.395 0-.776-.057-1.141-.163l-2.072 2.072c.983.332 2.046.516 3.153.516 5.378 0 9.736-4.358 9.736-9.736s-4.358-9.736-9.736-9.736z"/></svg>
+                    <span class="hidden sm:inline">081917437171</span>
                 </a>
-                <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-full glass-card text-white flex items-center justify-center" aria-label="Menu">
-                    <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+
+                <button id="mobile-menu-button" aria-label="Toggle Menu" class="md:hidden w-10 h-10 rounded-full glass flex items-center justify-center text-slate-300 hover:text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10 px-6 py-4 space-y-3">
-            <a href="#home" class="block text-white font-medium py-1 hover:text-turquoise">Home</a>
-            <a href="#destinations" class="block text-white font-medium py-1 hover:text-turquoise">Destinations</a>
-            <a href="#packages" class="block text-white font-medium py-1 hover:text-turquoise">Packages</a>
-            <a href="#gallery" class="block text-white font-medium py-1 hover:text-turquoise">Gallery</a>
-            <a href="#about" class="block text-white font-medium py-1 hover:text-turquoise">About</a>
-            <a href="#contact" class="block text-white font-medium py-1 hover:text-turquoise">Contact</a>
-            <div class="pt-2">
-                <a href="https://wa.me/6281917437171?text=Halo%20Lombok%20Paradise,%20saya%20tertarik%20ingin%20memesan%20tour." target="_blank" class="w-full flex items-center justify-center gap-2 bg-turquoise text-oceanDark font-semibold py-2.5 rounded-full text-sm">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp: 081917437171
-                </a>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden glass bg-slate-950/90 border-t border-white/10 px-6 py-4 space-y-3 text-sm">
+            <a href="#" class="block text-white font-bold py-1">Home</a>
+            <a href="#destinasi" class="block text-slate-300 py-1">Destinations</a>
+            <a href="#paket" class="block text-slate-300 py-1">Packages</a>
+            <a href="#galeri" class="block text-slate-300 py-1">Gallery</a>
+            <a href="#about" class="block text-slate-300 py-1">About</a>
+            <a href="#kontak" class="block text-slate-300 py-1">Contact</a>
         </div>
     </header>
 
-    <div id="search-modal" class="fixed inset-0 z-50 bg-oceanDark/80 backdrop-blur-md hidden flex items-center justify-center px-4">
-        <div class="bg-white/10 glass-card p-6 rounded-2xl w-full max-w-xl relative border border-white/20">
-            <button onclick="toggleSearch()" class="absolute top-4 right-4 text-white hover:text-turquoise"><i class="fa-solid fa-xmark text-xl"></i></button>
-            <h3 class="text-white font-serif text-2xl mb-4">Cari Destinasi Impianmu</h3>
-            <div class="flex gap-2">
-                <input type="text" placeholder="Misal: Gili Trawangan, Pink Beach..." class="w-full bg-white/20 border border-white/30 rounded-xl px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:border-turquoise">
-                <button class="bg-turquoise text-oceanDark font-semibold px-6 py-3 rounded-xl hover:bg-turquoise/90 transition"><i class="fa-solid fa-search"></i></button>
-            </div>
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden py-20">
+        <div class="absolute inset-0 z-0">
+            <img src="image/banner.jpg" alt="Lombok Banner" class="w-full h-full object-cover scale-105 opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent"></div>
         </div>
-    </div>
 
-    <section id="home" class="hero-banner min-h-screen flex items-center pt-28 pb-16 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Hero Text Content -->
-            <div class="lg:col-span-7 space-y-6 text-white">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-turquoise text-xs font-semibold tracking-wider uppercase">
-                    <i class="fa-solid fa-compass"></i> Discover Lombok Paradise
-                </div>
-                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                    Find Your <br><span class="text-turquoise">Paradise</span> in Lombok.
-                </h1>
-                <p class="text-white/80 text-base sm:text-lg max-w-xl font-light leading-relaxed">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7">
+                <span class="inline-block glass text-cyan-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest border border-cyan-400/30">
+                    Discover Lombok
+                </span>
+                <h2 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-6">
+                    Find Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">Paradise</span> in Lombok.
+                </h2>
+                <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-xl font-light leading-relaxed">
                     Crystal-clear water, vibrant coral reefs, and unforgettable experiences await you in Lombok, Indonesia.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="https://wa.me/6281917437171?text=Halo%20Lombok%20Paradise,%20saya%20ingin%20memesan%20perjalanan." target="_blank" class="bg-turquoise hover:bg-turquoise/90 text-oceanDark font-semibold px-8 py-4 rounded-full shadow-lg shadow-turquoise/30 flex items-center gap-3 transition transform hover:-translate-y-0.5">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Book via WhatsApp
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/6281917437171?text=Halo,%20saya%20ingin%20booking%20tour." target="_blank" class="glass px-7 py-3.5 rounded-full font-bold text-sm text-white hover:bg-white/20 transition flex items-center space-x-2 border border-white/30 shadow-lg">
+                        <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.766 0 1.018.267 1.972.733 2.798l-7.784 2.85 2.87-7.659c.77-1.468 2.261-2.529 3.996-2.529h.02c1.735 0 3.226 1.061 3.996 2.529l.063.125c.677-1.042 1.848-1.745 3.181-1.745 2.128 0 3.851 1.724 3.851 3.851 0 2.128-1.723 3.852-3.851 3.852-.395 0-.776-.057-1.141-.163l-2.072 2.072c.983.332 2.046.516 3.153.516 5.378 0 9.736-4.358 9.736-9.736s-4.358-9.736-9.736-9.736z"/></svg>
+                        <span>Book via WhatsApp</span>
                     </a>
-                    <a href="#destinations" class="glass-card hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition">
+                    <a href="#destinasi" class="glass px-7 py-3.5 rounded-full font-semibold text-sm text-slate-200 hover:text-white hover:bg-white/10 transition border border-white/10 flex items-center space-x-2">
                         <span>Explore Destinations</span>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Hero Floating Experience Cards -->
             <div class="lg:col-span-5 space-y-4">
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-turquoise transition duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-turquoise/20 flex items-center justify-center text-turquoise text-2xl shrink-0">
-                        <i class="fa-solid fa-person-swimming"></i>
+                <div class="glass p-4 rounded-2xl flex items-center justify-between border border-white/20 hover:bg-white/10 transition cursor-pointer">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center border border-white/20 text-cyan-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Snorkeling</h3>
+                            <p class="text-xs text-slate-300">Crystal Clear Water & Marine Life</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="text-white font-semibold text-lg">Snorkeling</h4>
-                        <p class="text-white/70 text-xs sm:text-sm">Crystal Clear Water & Marine Life</p>
-                    </div>
-                    <div class="ml-auto text-turquoise"><i class="fa-solid fa-chevron-right"></i></div>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
-
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-turquoise transition duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-accentGold/20 flex items-center justify-center text-accentGold text-2xl shrink-0">
-                        <i class="fa-solid fa-water"></i>
+                <div class="glass p-4 rounded-2xl flex items-center justify-between border border-white/20 hover:bg-white/10 transition cursor-pointer">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center border border-white/20 text-teal-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Surfing</h3>
+                            <p class="text-xs text-slate-300">Best Waves in Mandalika & Ekas</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="text-white font-semibold text-lg">Surfing</h4>
-                        <p class="text-white/70 text-xs sm:text-sm">Best Waves in Mandalika & Ekas</p>
-                    </div>
-                    <div class="ml-auto text-turquoise"><i class="fa-solid fa-chevron-right"></i></div>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
-
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-turquoise transition duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-blue-400/20 flex items-center justify-center text-blue-300 text-2xl shrink-0">
-                        <i class="fa-solid fa-island-tropical"></i>
+                <div class="glass p-4 rounded-2xl flex items-center justify-between border border-white/20 hover:bg-white/10 transition cursor-pointer">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center border border-white/20 text-emerald-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Gili Islands</h3>
+                            <p class="text-xs text-slate-300">Island Hopping Paradise</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="text-white font-semibold text-lg">Gili Islands</h4>
-                        <p class="text-white/70 text-xs sm:text-sm">Island Hopping Paradise</p>
-                    </div>
-                    <div class="ml-auto text-turquoise"><i class="fa-solid fa-chevron-right"></i></div>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="destinations" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-end mb-12">
+    <section id="destinasi" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-2">Explore Lombok</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">Destinasi Favorit di Lombok</h2>
+            <p class="text-slate-400 text-sm">Pilihan pulau eksotis dan pantai terindah yang wajib masuk dalam daftar liburanmu.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="image/dest-trawangan.jpg" alt="Gili Trawangan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 right-4 glass text-white text-[10px] font-bold px-3 py-1 rounded-full">Gili Islands</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Gili Trawangan</h3>
+                    <p class="text-slate-400 text-xs mb-6 leading-relaxed">Surga bawah laut dengan spot snorkeling terbaik dan kehidupan malam yang semarak.</p>
+                    <a href="https://wa.me/6281917437171?text=Halo,%20saya%20mau%20tanya%20paket%20Gili%20Trawangan." target="_blank" class="text-cyan-400 font-bold text-xs flex items-center space-x-1 hover:text-cyan-300">
+                        <span>Pesan Paket Ini</span> &rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="image/dest-pinkbeach.jpg" alt="Pink Beach" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 right-4 glass text-white text-[10px] font-bold px-3 py-1 rounded-full">East Lombok</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Pink Beach</h3>
+                    <p class="text-slate-400 text-xs mb-6 leading-relaxed">Keunikan pasir pantai berwarna merah muda alami dengan air laut yang jernih.</p>
+                    <a href="https://wa.me/6281917437171?text=Halo,%20saya%20mau%20tanya%20paket%20Pink%20Beach." target="_blank" class="text-cyan-400 font-bold text-xs flex items-center space-x-1 hover:text-cyan-300">
+                        <span>Pesan Paket Ini</span> &rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="image/dest-mandalika.jpg" alt="Mandalika" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 right-4 glass text-white text-[10px] font-bold px-3 py-1 rounded-full">South Lombok</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Mandalika & Kuta</h3>
+                    <p class="text-slate-400 text-xs mb-6 leading-relaxed">Kawasan wisata super prioritas dengan bukit megah dan ombak kelas dunia.</p>
+                    <a href="https://wa.me/6281917437171?text=Halo,%20saya%20mau%20tanya%20paket%20Mandalika." target="_blank" class="text-cyan-400 font-bold text-xs flex items-center space-x-1 hover:text-cyan-300">
+                        <span>Pesan Paket Ini</span> &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak" class="bg-slate-950 border-t border-white/10 py-16 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
-                <span class="text-turquoise text-xs font-bold uppercase tracking-widest block mb-2">Popular Destinations</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oceanDark">Destinasi Favorit di Lombok</h2>
-            </div>
-            <a href="#" class="text-oceanBlue font-semibold text-sm hover:text-turquoise flex items-center gap-2 group">
-                <span>Lihat Semua</span>
-                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Destinasi 1 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Gili+Trawangan'" alt="Gili Trawangan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Gili Trawangan</span>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="image/logo.jpg" alt="Logo" class="w-8 h-8 object-cover rounded-full border border-cyan-400">
+                    <span class="text-sm font-bold text-white tracking-tight">Lombok Paradise</span>
                 </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Snorkeling bersama penyu, bersepeda keliling pulau, dan sunset spektakuler.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> North Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Gili%20Trawangan" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destinasi 2 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Gili+Air'" alt="Gili Air" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Gili Air</span>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Suasana pantai yang tenang, cocok untuk bersantai dan menikmati keindahan bawah laut.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> North Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Gili%20Air" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destinasi 3 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Gili+Meno'" alt="Gili Meno" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Gili Meno</span>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Pulau tersembunyi dengan keindahan pantai berpasir putih dan patung bawah laut ikonik.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> North Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Gili%20Meno" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destinasi 4 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Pink+Beach'" alt="Pink Beach" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Pink Beach</span>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Pasir pantai unik berwarna merah muda dengan panorama perbukitan eksotis di sekitarnya.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> East Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Pink%20Beach" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destinasi 5 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Mandalika'" alt="Mandalika" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Mandalika</span>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Pusat pariwisata modern, sirkuit internasional, dan pantai selancar berkelas dunia.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Central Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Mandalika" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destinasi 6 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-oceanLight group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Tanjung+Aan'" alt="Tanjung Aan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/80 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-serif text-xl font-bold">Tanjung Aan</span>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm mb-4">Pantai berpasir putih merica dengan teluk melengkung yang sangat indah untuk bersantai.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span class="text-xs text-turquoise font-bold uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Central Lombok</span>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20tertarik%20dengan%20tour%20Tanjung%20Aan" target="_blank" class="w-9 h-9 rounded-full bg-oceanLight text-oceanDark flex items-center justify-center hover:bg-turquoise hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-oceanDark text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <span class="text-turquoise text-xs font-bold uppercase tracking-widest block mb-2">Our Experiences</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold">Rasakan Pengalaman Terbaik di Lombok</h2>
-                </div>
-                <a href="#" class="text-turquoise font-semibold text-sm hover:underline flex items-center gap-2">
-                    <span>Lihat Semua</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-6 rounded-3xl hover:border-turquoise transition">
-                    <div class="w-12 h-12 rounded-xl bg-turquoise/20 text-turquoise flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-mask-snorkel"></i></div>
-                    <h3 class="font-bold text-lg mb-2">Snorkeling Tour</h3>
-                    <p class="text-white/70 text-sm">Jelajahi keindahan bawah laut dengan pemandu profesional berpengalaman.</p>
-                </div>
-                <div class="glass-card p-6 rounded-3xl hover:border-turquoise transition">
-                    <div class="w-12 h-12 rounded-xl bg-accentGold/20 text-accentGold flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-water"></i></div>
-                    <h3 class="font-bold text-lg mb-2">Surf Experience</h3>
-                    <p class="text-white/70 text-sm">Taklukan ombak terbaik di spot-spot selancar tersembunyi di Lombok.</p>
-                </div>
-                <div class="glass-card p-6 rounded-3xl hover:border-turquoise transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-400/20 text-blue-300 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-sailboat"></i></div>
-                    <h3 class="font-bold text-lg mb-2">Island Hopping</h3>
-                    <p class="text-white/70 text-sm">Berpindah pulau eksotis dengan perahu cepat yang aman dan nyaman.</p>
-                </div>
-                <div class="glass-card p-6 rounded-3xl hover:border-turquoise transition">
-                    <div class="w-12 h-12 rounded-xl bg-purple-400/20 text-purple-300 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-person-swimming"></i></div>
-                    <h3 class="font-bold text-lg mb-2">Freediving</h3>
-                    <p class="text-white/70 text-sm">Rasakan kedamaian laut bebas bersama instruktur tersertifikasi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
-            <span class="text-turquoise text-xs font-bold uppercase tracking-widest block">Why Choose Us</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oceanDark">Kenapa Memilih Lombok Paradise?</h2>
-            <p class="text-gray-600 text-base leading-relaxed">
-                Kami berkomitmen memberikan pengalaman liburan tak terlupakan dengan pelayanan profesional, keamanan terjamin, serta destinasi pilihan terbaik di Lombok.
-            </p>
-
-            <div class="space-y-4 pt-2">
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-turquoise/10 text-turquoise flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-user-tie"></i></div>
-                    <div>
-                        <h4 class="font-bold text-oceanDark text-lg">Professional Local Guide</h4>
-                        <p class="text-gray-600 text-sm">Guide lokal berpengalaman yang menguasai setiap sudut pulau.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-turquoise/10 text-turquoise flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-users"></i></div>
-                    <div>
-                        <h4 class="font-bold text-oceanDark text-lg">Small Group Experience</h4>
-                        <p class="text-gray-600 text-sm">Lebih nyaman dan intim untuk liburan berkualitas bersama kerabat.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-turquoise/10 text-turquoise flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div>
-                        <h4 class="font-bold text-oceanDark text-lg">Safety First</h4>
-                        <p class="text-gray-600 text-sm">Standar keamanan peralatan snorkeling & transportasi terlengkap.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-turquoise/10 text-turquoise flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h4 class="font-bold text-oceanDark text-lg">Best Hidden Spots</h4>
-                        <p class="text-gray-600 text-sm">Menemukan surga tersembunyi yang belum banyak dikunjungi wisatawan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="lg:col-span-6 relative">
-            <div class="rounded-3xl overflow-hidden shadow-2xl relative h-[450px]">
-                <img src="image/id.jpg" onerror="this.src='https://placehold.co/800x600/134074/ffffff?text=Lombok+Paradise+Experience'" alt="Lombok Paradise Boat" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-oceanDark/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-2xl text-white">
-                    <span class="text-accentGold text-xs font-bold tracking-widest uppercase block mb-1">Eksklusif Tour</span>
-                    <h3 class="font-serif text-xl font-bold">Jelajahi Keindahan Bahari Lombok Bersama Kami</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="packages" class="py-20 bg-oceanLight border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <span class="text-turquoise text-xs font-bold uppercase tracking-widest block mb-2">Tour Packages</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oceanDark">Paket Tour Pilihan</h2>
-                </div>
-                <a href="https://wa.me/6281917437171?text=Halo,%20saya%20ingin%20melihat%20semua%20paket%20tour." target="_blank" class="text-oceanBlue font-semibold text-sm hover:text-turquoise flex items-center gap-2">
-                    <span>Lihat Semua</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Package 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-52">
-                            <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Turtle+Snorkeling'" alt="Turtle Snorkeling" class="w-full h-full object-cover">
-                            <span class="absolute top-4 left-4 bg-turquoise text-oceanDark font-bold text-xs px-3 py-1 rounded-full uppercase">Half Day</span>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="font-serif text-2xl font-bold text-oceanDark">Turtle Snorkeling</h3>
-                            <p class="text-gray-600 text-sm">Pengalaman snorkeling terbaik di Gili Trawangan dengan pemandu profesional dan dokumentasi foto bawah laut.</p>
-                            <ul class="space-y-2 text-sm text-gray-600 pt-2 border-t border-gray-100">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Boat Charter</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Local Guide</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Alat Snorkeling & GoPro Photo</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
-                        <div>
-                            <span class="text-xs text-gray-500 block">Mulai dari</span>
-                            <span class="text-lg font-bold text-oceanBlue">Rp250.000</span>
-                        </div>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20ingin%20booking%20Paket%20Turtle%20Snorkeling" target="_blank" class="bg-turquoise hover:bg-turquoise/90 text-oceanDark font-semibold px-5 py-2.5 rounded-xl text-sm transition">Book Now</a>
-                    </div>
-                </div>
-
-                <!-- Package 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-52">
-                            <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Island+Hopping'" alt="Island Hopping" class="w-full h-full object-cover">
-                            <span class="absolute top-4 left-4 bg-accentGold text-oceanDark font-bold text-xs px-3 py-1 rounded-full uppercase">Full Day</span>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="font-serif text-2xl font-bold text-oceanDark">Island Hopping</h3>
-                            <p class="text-gray-600 text-sm">Jelajahi keindahan 3 Gili dalam satu hari penuh dengan fasilitas lengkap dan kenyamanan maksimal.</p>
-                            <ul class="space-y-2 text-sm text-gray-600 pt-2 border-t border-gray-100">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> 3 Gili Exploration</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Lunch Included</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Full Equipment & Guide</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
-                        <div>
-                            <span class="text-xs text-gray-500 block">Mulai dari</span>
-                            <span class="text-lg font-bold text-oceanBlue">Rp450.000</span>
-                        </div>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20ingin%20booking%20Paket%20Island%20Hopping" target="_blank" class="bg-turquoise hover:bg-turquoise/90 text-oceanDark font-semibold px-5 py-2.5 rounded-xl text-sm transition">Book Now</a>
-                    </div>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-52">
-                            <img src="image/id.jpg" onerror="this.src='https://placehold.co/600x400/134074/ffffff?text=Surf+Mandalika'" alt="Surf Mandalika" class="w-full h-full object-cover">
-                            <span class="absolute top-4 left-4 bg-blue-500 text-white font-bold text-xs px-3 py-1 rounded-full uppercase">Full Day</span>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="font-serif text-2xl font-bold text-oceanDark">Surf Mandalika</h3>
-                            <p class="text-gray-600 text-sm">Paket khusus peselancar pemula hingga profesional untuk menaklukkan ombak terbaik di selatan Lombok.</p>
-                            <ul class="space-y-2 text-sm text-gray-600 pt-2 border-t border-gray-100">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Professional Instructor</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Board Rental</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-turquoise"></i> Action Photos</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
-                        <div>
-                            <span class="text-xs text-gray-500 block">Mulai dari</span>
-                            <span class="text-lg font-bold text-oceanBlue">Rp350.000</span>
-                        </div>
-                        <a href="https://wa.me/6281917437171?text=Halo,%20saya%20ingin%20booking%20Paket%20Surf%20Mandalika" target="_blank" class="bg-turquoise hover:bg-turquoise/90 text-oceanDark font-semibold px-5 py-2.5 rounded-xl text-sm transition">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <span class="text-turquoise text-xs font-bold uppercase tracking-widest block mb-2">Gallery</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oceanDark">Moments from Lombok</h2>
-            <p class="text-gray-600 text-sm mt-2">Potret keindahan alam dan momen liburan bahagia bersama para traveler kami.</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 shadow-lg group">
-                <img src="image/id.jpg" onerror="this.src='https://placehold.co/400x400/134074/ffffff?text=Gallery+1'" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 shadow-lg group">
-                <img src="image/id.jpg" onerror="this.src='https://placehold.co/400x400/134074/ffffff?text=Gallery+2'" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 shadow-lg group">
-                <img src="image/id.jpg" onerror="this.src='https://placehold.co/400x400/134074/ffffff?text=Gallery+3'" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 shadow-lg group">
-                <img src="image/id.jpg" onerror="this.src='https://placehold.co/400x400/134074/ffffff?text=Gallery+4'" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-oceanLight border-t border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-turquoise text-xs font-bold uppercase tracking-widest block mb-2">Traveler Stories</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oceanDark mb-10">Testimoni Pelanggan</h2>
-            
-            <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 relative">
-                <div class="text-accentGold text-2xl mb-4 flex justify-center gap-1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <p class="text-gray-700 font-serif text-lg sm:text-xl italic mb-6">
-                    "Pengalaman snorkeling terbaik di Lombok. Guide ramah, pemandangan luar biasa, dan spotnya keren banget!"
+                <p class="leading-relaxed">
+                    Partner terpercaya untuk menjelajahi keindahan alam Lombok dengan standar pelayanan profesional dan bersertifikasi HPI.
                 </p>
-                <div class="font-bold text-oceanDark">Sarah - Australia</div>
-                <div class="text-xs text-turquoise uppercase tracking-widest mt-1">Verified Traveler</div>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white mb-3">Kontak & Reservasi</h4>
+                <p class="mb-2">WhatsApp: <strong class="text-white">081917437171</strong></p>
+                <p>Alamat: <strong class="text-white">Jl. RSUD Praya, Lombok Tengah, NTB</strong></p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white mb-3">Jam Operasional</h4>
+                <p class="mb-3">Senin - Minggu: 08.00 - 20.00 WITA</p>
+                <a href="https://wa.me/6281917437171" target="_blank" class="glass px-4 py-2 rounded-full font-bold text-emerald-400 hover:bg-emerald-500/20 transition inline-block border border-emerald-500/30">
+                    Chat Langsung via WhatsApp
+                </a>
             </div>
         </div>
-    </section>
-
-    <footer id="contact" class="bg-oceanDark text-white pt-16 pb-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-                <!-- Col 1 -->
-                <div class="space-y-4 md:col-span-2">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 p-0.5 border border-white/30 flex items-center justify-center overflow-hidden">
-                            <img src="image/logo.jpg" onerror="this.style.display='none'" alt="Logo" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <span class="font-serif font-bold text-xl text-white tracking-wide block leading-tight">LOMBOK PARADISE</span>
-                            <span class="text-[10px] uppercase tracking-widest text-turquoise font-medium block">TRAVEL AGENCY</span>
-                        </div>
-                    </div>
-                    <p class="text-white/70 text-sm max-w-sm">
-                        Partner terpercaya untuk menjelajahi keindahan alam bahari dan budaya eksotis Pulau Lombok.
-                    </p>
-                    <div class="text-white/80 text-sm space-y-1.5 pt-1">
-                        <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-turquoise"></i> Jl. RSUD Praya, Lombok Tengah, NTB</p>
-                        <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-turquoise"></i> 081917437171</p>
-                    </div>
-                </div>
-
-                <!-- Col 2 -->
-                <div>
-                    <h4 class="font-bold text-white text-base mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-white/70">
-                        <li><a href="#home" class="hover:text-turquoise transition">Home</a></li>
-                        <li><a href="#destinations" class="hover:text-turquoise transition">Destinations</a></li>
-                        <li><a href="#packages" class="hover:text-turquoise transition">Packages</a></li>
-                        <li><a href="#gallery" class="hover:text-turquoise transition">Gallery</a></li>
-                        <li><a href="#about" class="hover:text-turquoise transition">About Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3 -->
-                <div>
-                    <h4 class="font-bold text-white text-base mb-4">Follow Us</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-turquoise hover:text-oceanDark transition text-white" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-turquoise hover:text-oceanDark transition text-white" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-turquoise hover:text-oceanDark transition text-white" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50">
-                <p>&copy; 2026 Lombok Paradise. All rights reserved.</p>
-                <p class="mt-2 sm:mt-0 font-serif italic text-turquoise">More Than a Trip, It's a Paradise.</p>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 mt-10 border-t border-white/5 text-center text-slate-500">
+            &copy; 2026 Lombok Paradise Travel Agency (HPI Certified). All rights reserved.
         </div>
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.toggle('hidden');
-            if(menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            }
-        }
-
-        function toggleSearch() {
-            const modal = document.getElementById('search-modal');
-            modal.classList.toggle('hidden');
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('search-modal');
-            if (event.target === modal) {
-                modal.classList.add('hidden');
-            }
+        // Toggle mobile menu
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
         }
     </script>
 </body>
